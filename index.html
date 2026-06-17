@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Academic portfolio of Zahra Mojtahedin — digital hardware, embedded systems, computer architecture, FPGA, ASIC, and VLSI." />
-  <meta name="theme-color" content="#143b5d" />
+  <meta name="description" content="Academic website of Zahra Mojtahedin — research, publications, digital systems, electronics, embedded systems, and intelligent hardware." />
+  <meta name="theme-color" content="#173f5f" />
 
-  <title>Zahra Mojtahedin | Digital Hardware & Embedded Systems</title>
+  <title>Zahra Mojtahedin | Academic Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="shortcut icon" href="favicon.ico" />
@@ -14,24 +14,30 @@
 
   <style>
     :root {
-      --navy: #143b5d;
-      --navy-dark: #0a2439;
-      --teal: #1f8a8a;
-      --teal-soft: #dff4f2;
-      --blue-soft: #e9f1f8;
-      --gold: #d7a23a;
-      --gold-soft: #fff4da;
-      --rose-soft: #f9e9ee;
-      --ink: #263442;
-      --muted: #677887;
+      --navy: #173f5f;
+      --navy-dark: #0d2b42;
+      --teal: #168c8c;
+      --teal-soft: #e1f5f3;
+      --blue: #2878b5;
+      --blue-soft: #eaf3fb;
+      --gold: #d5a33f;
+      --gold-soft: #fff5dc;
+      --rose: #b85d78;
+      --rose-soft: #faeaf0;
+      --violet: #6f66b5;
+      --violet-soft: #efedfb;
+      --green: #3c8c62;
+      --green-soft: #e8f5ed;
+      --ink: #283743;
+      --muted: #667987;
       --line: #dfe8ee;
       --paper: #ffffff;
       --page: #f4f8fb;
-      --shadow: 0 14px 38px rgba(20, 59, 93, 0.10);
+      --shadow: 0 14px 38px rgba(23, 63, 95, 0.10);
       --radius-lg: 22px;
       --radius-md: 14px;
       --radius-sm: 10px;
-      --max-width: 1180px;
+      --max-width: 1200px;
     }
 
     * {
@@ -41,7 +47,10 @@
 
     body {
       margin: 0;
-      background: var(--page);
+      background:
+        radial-gradient(circle at 8% 2%, rgba(22, 140, 140, 0.08), transparent 28%),
+        radial-gradient(circle at 96% 18%, rgba(213, 163, 63, 0.08), transparent 24%),
+        var(--page);
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.72;
@@ -61,7 +70,7 @@
       width: min(var(--max-width), calc(100% - 32px));
       margin: 28px auto;
       display: grid;
-      grid-template-columns: 310px minmax(0, 1fr);
+      grid-template-columns: 315px minmax(0, 1fr);
       gap: 28px;
       align-items: start;
     }
@@ -70,9 +79,8 @@
       position: sticky;
       top: 24px;
       padding: 28px;
-      background:
-        linear-gradient(160deg, rgba(255,255,255,0.98), rgba(236,246,249,0.96));
-      border: 1px solid rgba(31, 138, 138, 0.18);
+      background: linear-gradient(160deg, rgba(255,255,255,0.98), rgba(237,247,249,0.96));
+      border: 1px solid rgba(22, 140, 140, 0.18);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
       overflow: hidden;
@@ -84,7 +92,7 @@
       width: 190px;
       height: 190px;
       border-radius: 50%;
-      background: rgba(31, 138, 138, 0.10);
+      background: rgba(22, 140, 140, 0.10);
       right: -82px;
       top: -78px;
     }
@@ -96,7 +104,7 @@
       padding: 7px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--teal), var(--navy));
-      box-shadow: 0 12px 28px rgba(20, 59, 93, 0.20);
+      box-shadow: 0 12px 28px rgba(23, 63, 95, 0.20);
       position: relative;
       z-index: 1;
     }
@@ -122,7 +130,7 @@
       margin: 10px 0 0;
       text-align: center;
       color: var(--teal);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.98rem;
     }
 
@@ -147,21 +155,23 @@
       padding: 10px 12px;
       border: 1px solid var(--line);
       border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
       color: var(--navy-dark);
       font-size: 0.87rem;
-      font-weight: 700;
+      font-weight: 800;
       transition: 0.2s ease;
     }
 
     .social-link:hover {
       transform: translateY(-2px);
-      border-color: rgba(31, 138, 138, 0.55);
+      border-color: rgba(22, 140, 140, 0.55);
       background: #fff;
-      box-shadow: 0 8px 18px rgba(20, 59, 93, 0.10);
+      box-shadow: 0 8px 18px rgba(23, 63, 95, 0.10);
     }
 
-    .social-link svg {
+    .social-link svg,
+    .button svg,
+    .contact-actions svg {
       width: 19px;
       height: 19px;
       flex: 0 0 auto;
@@ -174,10 +184,31 @@
       border-top: 1px solid var(--line);
     }
 
+    .quick-info h3 {
+      margin: 0 0 10px;
+      color: var(--navy-dark);
+      font-size: 0.95rem;
+    }
+
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .mini-tag {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
     .quick-info p {
-      margin: 8px 0;
+      margin: 12px 0 0;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.90rem;
     }
 
     .quick-info strong {
@@ -203,10 +234,10 @@
       justify-content: flex-end;
       gap: 8px;
       padding: 8px;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.90);
       border: 1px solid var(--line);
       border-radius: 999px;
-      box-shadow: 0 10px 28px rgba(20, 59, 93, 0.08);
+      box-shadow: 0 10px 28px rgba(23, 63, 95, 0.08);
       backdrop-filter: blur(14px);
     }
 
@@ -214,8 +245,8 @@
       padding: 8px 13px;
       border-radius: 999px;
       color: var(--navy-dark);
-      font-size: 0.88rem;
-      font-weight: 750;
+      font-size: 0.86rem;
+      font-weight: 800;
     }
 
     .nav a:hover {
@@ -226,11 +257,11 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 380px;
+      min-height: 390px;
       padding: 52px;
       border-radius: var(--radius-lg);
       background:
-        linear-gradient(135deg, rgba(20, 59, 93, 0.98), rgba(31, 138, 138, 0.93));
+        linear-gradient(135deg, rgba(23, 63, 95, 0.99), rgba(22, 140, 140, 0.93));
       color: #fff;
       box-shadow: var(--shadow);
     }
@@ -244,17 +275,17 @@
     }
 
     .hero::before {
-      width: 270px;
-      height: 270px;
+      width: 280px;
+      height: 280px;
       right: -80px;
       top: -90px;
     }
 
     .hero::after {
-      width: 160px;
-      height: 160px;
-      left: -50px;
-      bottom: -65px;
+      width: 170px;
+      height: 170px;
+      left: -52px;
+      bottom: -70px;
     }
 
     .eyebrow {
@@ -272,17 +303,17 @@
     }
 
     .hero h1 {
-      max-width: 760px;
+      max-width: 780px;
       margin: 22px 0 14px;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.35rem, 6vw, 4.35rem);
+      font-size: clamp(2.35rem, 6vw, 4.25rem);
       line-height: 1.08;
       position: relative;
       z-index: 1;
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0;
       color: rgba(255,255,255,0.88);
       font-size: 1.07rem;
@@ -323,19 +354,13 @@
       transform: translateY(-2px);
     }
 
-    .button svg {
-      width: 19px;
-      height: 19px;
-      fill: currentColor;
-    }
-
     .section {
       margin-top: 24px;
       padding: 34px;
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      box-shadow: 0 9px 28px rgba(20, 59, 93, 0.055);
+      box-shadow: 0 9px 28px rgba(23, 63, 95, 0.055);
     }
 
     .section-heading {
@@ -364,76 +389,73 @@
       color: var(--muted);
     }
 
-    .focus-grid,
-    .project-grid,
+    .interest-grid,
     .research-grid,
+    .publication-grid,
+    .project-grid,
     .info-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
 
-    .focus-card,
-    .project-card,
+    .interest-card,
     .research-card,
+    .publication-card,
+    .project-card,
     .info-card {
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       background: #fff;
       transition: 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .focus-card:hover,
-    .project-card:hover,
+    .interest-card:hover,
     .research-card:hover,
+    .publication-card:hover,
+    .project-card:hover,
     .info-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(20, 59, 93, 0.09);
+      box-shadow: 0 12px 24px rgba(23, 63, 95, 0.09);
     }
 
-    .focus-card {
+    .interest-card {
       padding: 20px;
     }
 
-    .focus-icon {
+    .interest-icon {
       width: 44px;
       height: 44px;
       display: grid;
       place-items: center;
       margin-bottom: 14px;
       border-radius: 13px;
-      background: var(--teal-soft);
-      color: var(--teal);
       font-weight: 900;
     }
 
-    .focus-card:nth-child(2) .focus-icon {
-      background: var(--gold-soft);
-      color: #a46a00;
-    }
+    .interest-card:nth-child(1) .interest-icon { background: var(--teal-soft); color: var(--teal); }
+    .interest-card:nth-child(2) .interest-icon { background: var(--gold-soft); color: #9b6800; }
+    .interest-card:nth-child(3) .interest-icon { background: var(--blue-soft); color: var(--blue); }
+    .interest-card:nth-child(4) .interest-icon { background: var(--rose-soft); color: var(--rose); }
+    .interest-card:nth-child(5) .interest-icon { background: var(--violet-soft); color: var(--violet); }
+    .interest-card:nth-child(6) .interest-icon { background: var(--green-soft); color: var(--green); }
 
-    .focus-card:nth-child(3) .focus-icon {
-      background: var(--blue-soft);
-      color: var(--navy);
-    }
-
-    .focus-card:nth-child(4) .focus-icon {
-      background: var(--rose-soft);
-      color: #a24a67;
-    }
-
-    .focus-card h3,
-    .project-card h3,
+    .interest-card h3,
     .research-card h3,
+    .publication-card h3,
+    .project-card h3,
     .info-card h3 {
       margin: 0 0 8px;
       color: var(--navy-dark);
       line-height: 1.35;
     }
 
-    .focus-card p,
-    .project-card p,
+    .interest-card p,
     .research-card p,
+    .publication-card p,
+    .project-card p,
     .info-card p {
       margin: 0;
       color: var(--muted);
@@ -441,14 +463,14 @@
     }
 
     .research-card,
+    .publication-card,
     .project-card,
     .info-card {
       padding: 22px;
-      position: relative;
-      overflow: hidden;
     }
 
     .research-card::before,
+    .publication-card::before,
     .project-card::before {
       content: "";
       position: absolute;
@@ -457,11 +479,21 @@
       background: linear-gradient(180deg, var(--teal), var(--gold));
     }
 
+    .card-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
     .meta {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 12px 0 0;
+      margin: 14px 0 0;
     }
 
     .tag {
@@ -471,9 +503,62 @@
       border-radius: 999px;
       background: var(--blue-soft);
       color: var(--navy);
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       font-weight: 800;
     }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0 12px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: #8c5e00;
+      font-size: 0.77rem;
+      font-weight: 900;
+    }
+
+    .publication-card .publication-meta {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .category-block {
+      margin-top: 24px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(145deg, #fff, #f9fcfd);
+    }
+
+    .category-block:first-of-type {
+      margin-top: 0;
+    }
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--navy-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+    }
+
+    .category-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 5px var(--teal-soft);
+    }
+
+    .category-block:nth-of-type(2) .category-dot { background: var(--gold); box-shadow: 0 0 0 5px var(--gold-soft); }
+    .category-block:nth-of-type(3) .category-dot { background: var(--rose); box-shadow: 0 0 0 5px var(--rose-soft); }
+    .category-block:nth-of-type(4) .category-dot { background: var(--violet); box-shadow: 0 0 0 5px var(--violet-soft); }
 
     .timeline {
       position: relative;
@@ -544,7 +629,7 @@
 
     .contact-panel {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 20px;
       align-items: center;
       padding: 32px;
@@ -578,16 +663,11 @@
       border-radius: 11px;
       background: rgba(255,255,255,0.08);
       font-weight: 800;
+      overflow-wrap: anywhere;
     }
 
     .contact-actions a:hover {
       background: rgba(255,255,255,0.15);
-    }
-
-    .contact-actions svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
     }
 
     footer {
@@ -629,9 +709,10 @@
         padding: 24px;
       }
 
-      .focus-grid,
-      .project-grid,
+      .interest-grid,
       .research-grid,
+      .publication-grid,
+      .project-grid,
       .info-grid,
       .teaching-list,
       .contact-panel {
@@ -662,8 +743,8 @@
       </div>
 
       <h1 class="name">Zahra Mojtahedin</h1>
-      <p class="role">Digital Hardware & Embedded Systems</p>
-      <p class="affiliation">M.Sc. Student in Electrical Engineering<br />Sharif University of Technology</p>
+      <p class="role">Electrical Engineering · Digital Electronic Systems</p>
+      <p class="affiliation">M.Sc. Student<br />Sharif University of Technology</p>
 
       <div class="socials">
         <a class="social-link" href="https://github.com/zahramojtahedin" target="_blank" rel="noopener">
@@ -681,14 +762,22 @@
           ORCID
         </a>
 
-        <a class="social-link" href="Zahra_Mojtahedin_Hardware_CV.pdf" target="_blank">
+        <a class="social-link" href="Zahra_Mojtahedin_CV.pdf" target="_blank">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 11h8v1.6H8V11Zm0 3.3h8v1.6H8v-1.6Zm0 3.3h5.2v1.6H8v-1.6Z"/></svg>
-          Hardware CV
+          CV
         </a>
       </div>
 
       <div class="quick-info">
-        <p><strong>Focus:</strong> FPGA, ASIC, VLSI, Embedded Systems</p>
+        <h3>Research Interests</h3>
+        <div class="interest-tags">
+          <span class="mini-tag">Computer Architecture</span>
+          <span class="mini-tag">FPGA / ASIC</span>
+          <span class="mini-tag">Embedded Systems</span>
+          <span class="mini-tag">VLSI</span>
+          <span class="mini-tag">Efficient AI</span>
+          <span class="mini-tag">Neural Engineering</span>
+        </div>
         <p><strong>Location:</strong> Tehran, Iran</p>
         <p><strong>Languages:</strong> Persian, English, Azerbaijani, Turkish</p>
       </div>
@@ -698,7 +787,9 @@
       <div class="topbar">
         <nav class="nav" aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#research">Research</a>
+          <a href="#interests">Interests</a>
+          <a href="#research">Research Projects</a>
+          <a href="#publications">Publications</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#teaching">Teaching</a>
@@ -708,168 +799,267 @@
 
       <section class="hero" id="about">
         <span class="eyebrow">Academic & Engineering Portfolio</span>
-        <h1>Designing reliable systems from architecture to hardware.</h1>
+        <h1>Researching and building systems across architecture, hardware, and intelligent computing.</h1>
         <p>
-          I am an Electrical Engineering graduate student working across computer architecture, digital design,
-          FPGA-based systems, embedded platforms, and hardware-aware intelligent systems. I enjoy projects where
-          low-level implementation, system behavior, and practical constraints meet.
+          I am an Electrical Engineering graduate student at Sharif University of Technology. My work combines
+          digital system design, computer architecture, embedded platforms, integrated circuits, and learning-based
+          methods, with an emphasis on solutions that can move from models and algorithms to practical implementation.
         </p>
 
         <div class="hero-actions">
-          <a class="button" href="#projects">
+          <a class="button" href="#research">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v6H4V5Zm9 0h7v6h-7V5ZM4 13h7v6H4v-6Zm9 0h7v6h-7v-6Z"/></svg>
-            View Selected Work
+            Research Projects
           </a>
-          <a class="button secondary" href="Zahra_Mojtahedin_Hardware_CV.pdf" target="_blank">
+          <a class="button secondary" href="Zahra_Mojtahedin_CV.pdf" target="_blank">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 11h8v1.6H8V11Zm0 3.3h8v1.6H8v-1.6Zm0 3.3h5.2v1.6H8v-1.6Z"/></svg>
-            Open Hardware CV
+            View CV
           </a>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-heading"><span class="mark"></span><h2>Core Focus</h2></div>
-        <div class="focus-grid">
-          <article class="focus-card">
-            <div class="focus-icon">01</div>
+      <section class="section" id="interests">
+        <div class="section-heading"><span class="mark"></span><h2>Research Interests</h2></div>
+        <p class="lead">Areas that currently shape my academic and engineering work.</p>
+
+        <div class="interest-grid">
+          <article class="interest-card">
+            <div class="interest-icon">01</div>
             <h3>Computer Architecture</h3>
-            <p>Instruction-level parallelism, processor organization, memory behavior, and efficient execution.</p>
+            <p>Parallel execution, processor organization, memory systems, and architecture-aware acceleration.</p>
           </article>
-          <article class="focus-card">
-            <div class="focus-icon">02</div>
-            <h3>FPGA & Digital Design</h3>
-            <p>RTL development, hardware acceleration, digital interfaces, verification, and implementation flow.</p>
+          <article class="interest-card">
+            <div class="interest-icon">02</div>
+            <h3>FPGA, ASIC & Digital Systems</h3>
+            <p>RTL design, configurable acceleration, digital interfaces, and implementation-oriented system design.</p>
           </article>
-          <article class="focus-card">
-            <div class="focus-icon">03</div>
+          <article class="interest-card">
+            <div class="interest-icon">03</div>
             <h3>Embedded Systems</h3>
-            <p>STM32 and ESP32 platforms, real-time control, sensor interfaces, communication, and data acquisition.</p>
+            <p>Microcontrollers, real-time control, sensor acquisition, communication, and hardware–software co-design.</p>
           </article>
-          <article class="focus-card">
-            <div class="focus-icon">04</div>
-            <h3>VLSI & Hardware Design</h3>
-            <p>Analog and digital circuit design, CMOS systems, PCB development, and hardware-software co-design.</p>
+          <article class="interest-card">
+            <div class="interest-icon">04</div>
+            <h3>VLSI & Integrated Circuits</h3>
+            <p>Analog and digital IC design, circuit-level trade-offs, PCB implementation, and low-power systems.</p>
+          </article>
+          <article class="interest-card">
+            <div class="interest-icon">05</div>
+            <h3>Efficient Machine Learning Systems</h3>
+            <p>Hardware-aware neural networks, efficient arithmetic, FPGA acceleration, and compact intelligent systems.</p>
+          </article>
+          <article class="interest-card">
+            <div class="interest-icon">06</div>
+            <h3>Neural Engineering & Biomedical Sensing</h3>
+            <p>Neural signals, physiological monitoring, multimodal sensing, and embedded tools for experimental studies.</p>
           </article>
         </div>
       </section>
 
       <section class="section" id="research">
-        <div class="section-heading"><span class="mark"></span><h2>Research Highlights</h2></div>
-        <p class="lead">Selected topics that connect theoretical modeling with implementable engineering systems.</p>
+        <div class="section-heading"><span class="mark"></span><h2>Research Projects</h2></div>
+        <p class="lead">Thesis work and manuscript-oriented research projects.</p>
 
         <div class="research-grid">
           <article class="research-card">
-            <h3>Architecture-Aware Deep Neural Networks</h3>
+            <span class="card-kicker">Master’s Thesis</span>
+            <h3>Optimization of ReLU-Based Layer Architectures in Deep Neural Networks Using Approximation Theory</h3>
             <p>
-              Master’s research on how network structure influences approximation capability, with emphasis on
-              low-complexity architectures and design choices that remain meaningful for implementation.
+              A theory-driven study of how depth, width, connectivity, and sparsity influence the approximation
+              capability of ReLU networks, with attention to architecture choices that remain useful in practice.
+              Supervised by Prof. Siavash Bayat.
             </p>
             <div class="meta">
               <span class="tag">Approximation Theory</span>
               <span class="tag">ReLU Networks</span>
-              <span class="tag">Efficient Architectures</span>
+              <span class="tag">Network Complexity</span>
             </div>
           </article>
 
           <article class="research-card">
-            <h3>Zebrafish Neural Activity & Behavior</h3>
+            <span class="card-kicker">Bachelor’s Thesis</span>
+            <h3>Detection of Human Concentration Using Eyelid Movements and Neural Signals</h3>
             <p>
-              Research involving neural recording workflows, embedded acquisition hardware, and computational
-              modeling of brain activity and behavior in collaboration with Wen Lab.
-            </p>
-            <div class="meta">
-              <span class="tag">Neural Recording</span>
-              <span class="tag">Embedded Acquisition</span>
-              <span class="tag">TransMorph</span>
-            </div>
-          </article>
-
-          <article class="research-card">
-            <h3>Non-Invasive Concentration Monitoring</h3>
-            <p>
-              Bachelor’s project combining eye movement analysis, neural signals, and embedded sensing to estimate
-              concentration without intrusive instrumentation.
+              A non-invasive concentration-monitoring framework combining eye-related measurements, neural signals,
+              embedded sensing, and learning-based analysis to estimate cognitive attention. Supervised by
+              Prof. Saeed Bagheri Shouraki.
             </p>
             <div class="meta">
               <span class="tag">EEG</span>
               <span class="tag">Eye Tracking</span>
-              <span class="tag">ESP32</span>
+              <span class="tag">Machine Learning</span>
             </div>
           </article>
 
           <article class="research-card">
-            <h3>Smart Wearable Monitoring</h3>
+            <span class="card-kicker">Paper Project</span>
+            <h3>RNS-Based CNN Implementation on FPGA</h3>
             <p>
-              A multi-sensor embedded platform for real-time physiological monitoring, long-range communication,
-              and reliable data handling on constrained hardware.
+              An FPGA-oriented CNN accelerator using residue-number arithmetic, divider-free modular reduction,
+              quantized computation, and implementation-aware optimization for efficient inference.
+            </p>
+            <div class="meta">
+              <span class="tag">FPGA</span>
+              <span class="tag">RNS</span>
+              <span class="tag">CNN Acceleration</span>
+              <span class="tag">Quantization</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <span class="card-kicker">Paper Project</span>
+            <h3>Locality-Aware FPGA Acceleration of TFHE Bootstrapping Kernels</h3>
+            <p>
+              A tile-structured FPGA architecture targeting transform processing and key-switching bottlenecks in
+              TFHE bootstrapping, with emphasis on data locality, parallel butterfly processing, and efficient memory access.
+            </p>
+            <div class="meta">
+              <span class="tag">NTT</span>
+              <span class="tag">TFHE</span>
+              <span class="tag">FPGA Acceleration</span>
+              <span class="tag">Memory Locality</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <span class="card-kicker">Research Internship</span>
+            <h3>TransMorph-Based Modeling of Zebrafish Brain Activity and Behavior</h3>
+            <p>
+              Research at Wen Lab involving neural-data workflows, image-based modeling, registration, and embedded
+              acquisition tools for studying brain activity and behavior in animal experiments under Prof. Quan Wen.
+            </p>
+            <div class="meta">
+              <span class="tag">Neural Imaging</span>
+              <span class="tag">TransMorph</span>
+              <span class="tag">Data Acquisition</span>
+            </div>
+          </article>
+
+          <article class="research-card">
+            <span class="card-kicker">Biomedical Systems</span>
+            <h3>Smart Wearable Monitoring Platform</h3>
+            <p>
+              A multi-sensor embedded platform for physiological monitoring, local processing, and long-range
+              communication, designed around practical constraints of wearable hardware.
             </p>
             <div class="meta">
               <span class="tag">STM32</span>
               <span class="tag">ECG</span>
+              <span class="tag">SpO₂</span>
               <span class="tag">LoRaWAN</span>
             </div>
           </article>
         </div>
       </section>
 
+      <section class="section" id="publications">
+        <div class="section-heading"><span class="mark"></span><h2>Publications</h2></div>
+        <p class="lead">Current manuscripts are listed with their actual status; links can be added after submission or publication.</p>
+
+        <div class="publication-grid">
+          <article class="publication-card">
+            <span class="status">Prepared for submission</span>
+            <h3>Locality-Aware FPGA Acceleration of TFHE Bootstrapping Kernels</h3>
+            <p>
+              FPGA acceleration of NTT-based processing and LWE key switching through tiled computation,
+              replicated data paths, and locality-aware memory organization.
+            </p>
+            <div class="publication-meta">Manuscript · FPGA Architecture · Privacy-Preserving Computing</div>
+          </article>
+
+          <article class="publication-card">
+            <span class="status">Manuscript in preparation</span>
+            <h3>RNS-Based CNN Implementation on FPGA</h3>
+            <p>
+              An implementation study of quantized CNN inference using residue-number arithmetic and divider-free
+              modular operations on FPGA hardware.
+            </p>
+            <div class="publication-meta">Manuscript · Hardware Acceleration · Efficient Deep Learning</div>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="projects">
-        <div class="section-heading"><span class="mark"></span><h2>Selected Hardware Projects</h2></div>
-        <p class="lead">A focused selection of projects that best represent my hardware and embedded background.</p>
+        <div class="section-heading"><span class="mark"></span><h2>Engineering & Course Projects</h2></div>
+        <p class="lead">Projects are grouped by technical area so the page remains complete without becoming a flat list.</p>
 
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>Four-Issue MIPS Processor</h3>
-            <p>
-              Processor design exploring multi-issue execution, branch handling, dependency management, and a path
-              from in-order to more advanced execution behavior.
-            </p>
-            <div class="meta"><span class="tag">Computer Architecture</span><span class="tag">MIPS</span></div>
-          </article>
+        <div class="category-block">
+          <h3 class="category-title"><span class="category-dot"></span>Digital Systems & Computer Architecture</h3>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Four-Issue MIPS Processor</h3>
+              <p>A multi-issue processor project covering branch behavior, instruction dependencies, resource allocation, and in-order to out-of-order design concepts.</p>
+              <div class="meta"><span class="tag">MIPS</span><span class="tag">Parallel Execution</span></div>
+            </article>
+            <article class="project-card">
+              <h3>Zynq Signal-Processing Platform</h3>
+              <p>FPGA-based signal generation and processing with FFT, scrambling, descrambling, and HDMI visualization on a Zynq platform.</p>
+              <div class="meta"><span class="tag">Zynq</span><span class="tag">FPGA</span><span class="tag">HDMI</span></div>
+            </article>
+            <article class="project-card">
+              <h3>NAND Logic Reaction Timer</h3>
+              <p>A digital reaction-timing system based on combinational logic, push buttons, indicators, and timing control.</p>
+              <div class="meta"><span class="tag">Digital Logic</span><span class="tag">Hardware Prototyping</span></div>
+            </article>
+          </div>
+        </div>
 
-          <article class="project-card">
-            <h3>Zynq Signal-Processing Platform</h3>
-            <p>
-              FPGA-based signal generation and processing with FFT, scrambling, descrambling, and HDMI-based result
-              visualization on a Zynq platform.
-            </p>
-            <div class="meta"><span class="tag">Zynq</span><span class="tag">FPGA</span><span class="tag">HDMI</span></div>
-          </article>
+        <div class="category-block">
+          <h3 class="category-title"><span class="category-dot"></span>Electronics & Integrated Circuit Design</h3>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>CMOS Operational Amplifier</h3>
+              <p>Design and simulation of an amplifier in 0.18 μm CMOS technology with attention to gain, CMRR, stability, and power.</p>
+              <div class="meta"><span class="tag">Cadence</span><span class="tag">CMOS</span></div>
+            </article>
+            <article class="project-card">
+              <h3>Bipolar Amplifier Design</h3>
+              <p>A constrained high-gain amplifier design balancing output swing, power consumption, biasing, and transistor-level performance.</p>
+              <div class="meta"><span class="tag">BJT</span><span class="tag">Analog Design</span></div>
+            </article>
+            <article class="project-card">
+              <h3>Function Generator & Timer Circuits</h3>
+              <p>Waveform generation, Schmitt-trigger circuits, monostable and astable operation, PWM, and practical circuit simulation.</p>
+              <div class="meta"><span class="tag">Proteus</span><span class="tag">LTspice</span></div>
+            </article>
+          </div>
+        </div>
 
-          <article class="project-card">
-            <h3>Embedded IoT Monitoring Platform</h3>
-            <p>
-              A modular sensing platform using ESP32, Linux services, MQTT communication, and event detection for
-              real-time environmental monitoring.
-            </p>
-            <div class="meta"><span class="tag">ESP32</span><span class="tag">MQTT</span><span class="tag">Linux</span></div>
-          </article>
+        <div class="category-block">
+          <h3 class="category-title"><span class="category-dot"></span>Embedded, Sensing & Biomedical Systems</h3>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Embedded IoT Monitoring Platform</h3>
+              <p>A modular platform integrating ESP32 sensing, Linux services, MQTT communication, a database, and a web interface.</p>
+              <div class="meta"><span class="tag">ESP32</span><span class="tag">MQTT</span><span class="tag">Linux</span></div>
+            </article>
+            <article class="project-card">
+              <h3>Cardiac-Monitoring Embedded System</h3>
+              <p>STM32-based acquisition and real-time processing for pulse and cardiac signals, including sensor interfacing and communication.</p>
+              <div class="meta"><span class="tag">STM32</span><span class="tag">Sensors</span><span class="tag">C</span></div>
+            </article>
+            <article class="project-card">
+              <h3>Neuromuscular Measurement Study</h3>
+              <p>Experimental analysis of muscle activation, coactivation, force, and nerve-conduction behavior using physiological measurements.</p>
+              <div class="meta"><span class="tag">LabChart</span><span class="tag">Biomedical Signals</span></div>
+            </article>
+          </div>
+        </div>
 
-          <article class="project-card">
-            <h3>CMOS Operational Amplifier</h3>
-            <p>
-              Design and simulation of a low-power CMOS amplifier in 0.18 μm technology with attention to gain,
-              CMRR, stability, and implementation trade-offs.
-            </p>
-            <div class="meta"><span class="tag">Cadence</span><span class="tag">CMOS</span><span class="tag">Analog IC</span></div>
-          </article>
-
-          <article class="project-card">
-            <h3>Biomedical Sensing Hardware</h3>
-            <p>
-              Sensor acquisition and physiological-signal processing for heart activity, pulse monitoring, and
-              real-time transmission on STM32-based embedded hardware.
-            </p>
-            <div class="meta"><span class="tag">STM32</span><span class="tag">Sensors</span><span class="tag">Signal Acquisition</span></div>
-          </article>
-
-          <article class="project-card">
-            <h3>Function Generator & Analog Circuits</h3>
-            <p>
-              Practical circuit design involving Schmitt triggers, waveform generation, timer circuits, PWM, and
-              high-gain transistor amplifier design.
-            </p>
-            <div class="meta"><span class="tag">Analog Design</span><span class="tag">Proteus</span><span class="tag">LTspice</span></div>
-          </article>
+        <div class="category-block">
+          <h3 class="category-title"><span class="category-dot"></span>Machine Learning & Intelligent Systems</h3>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Audio Event Detection for Smart Monitoring</h3>
+              <p>A learning-enabled monitoring pipeline for detecting environmental audio events and integrating predictions into an embedded IoT system.</p>
+              <div class="meta"><span class="tag">Neural Networks</span><span class="tag">Event Detection</span></div>
+            </article>
+            <article class="project-card">
+              <h3>Eye-Tracking and Neural-Signal Analytics</h3>
+              <p>Image-processing and learning-based analysis of eye and EEG measurements for estimating concentration-related patterns.</p>
+              <div class="meta"><span class="tag">Computer Vision</span><span class="tag">EEG</span></div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -880,23 +1070,20 @@
             <h3>Research Intern</h3>
             <div class="org">Wen Lab, University of Science and Technology of China</div>
             <span class="date">2026</span>
-            <p>Neural recording hardware, embedded acquisition, sensing, and computational analysis for animal studies.</p>
+            <p>Neural imaging, data registration, experimental data workflows, embedded acquisition, and computational analysis for animal studies.</p>
           </div>
-
           <div class="timeline-item">
             <h3>Embedded Systems Engineer</h3>
             <div class="org">Eshtad Pars Co.</div>
             <span class="date">2024</span>
-            <p>Low-level embedded control, microcode development, real-time communication, and hardware interfacing.</p>
+            <p>Low-level embedded control, microcode development, real-time communication, and hardware interfacing for constrained systems.</p>
           </div>
-
           <div class="timeline-item">
             <h3>Summer Intern</h3>
             <div class="org">BIOSEN Group</div>
             <span class="date">2023</span>
-            <p>STM32 programming, pulse-sensor interfacing, data acquisition, PCB work, and embedded signal processing.</p>
+            <p>STM32 programming, sensor interfacing, data acquisition, PCB work, testing, and embedded signal processing.</p>
           </div>
-
           <div class="timeline-item">
             <h3>Communication Assistant</h3>
             <div class="org">Sharif University Foundation</div>
@@ -908,7 +1095,7 @@
 
       <section class="section" id="teaching">
         <div class="section-heading"><span class="mark"></span><h2>Teaching & Academic Service</h2></div>
-        <p class="lead">Course-specific materials, responsibilities, and semesters can be added gradually.</p>
+        <p class="lead">Detailed semesters, instructors, responsibilities, and teaching materials can be added for each course.</p>
         <div class="teaching-list">
           <div class="teaching-item">Computer Architecture</div>
           <div class="teaching-item">Advanced Computer Architecture</div>
@@ -927,19 +1114,19 @@
         <div class="info-grid">
           <article class="info-card">
             <h3>M.Sc. in Electrical Engineering</h3>
-            <p>Sharif University of Technology — Digital Electronic Systems</p>
+            <p>Sharif University of Technology · Digital Electronic Systems</p>
           </article>
           <article class="info-card">
             <h3>B.Sc. in Electrical Engineering</h3>
-            <p>Sharif University of Technology — Digital Systems</p>
+            <p>Sharif University of Technology · Digital Systems</p>
           </article>
           <article class="info-card">
             <h3>Academic Recognition</h3>
-            <p>Brilliant Talent admission, top academic standing, and strong national entrance-exam performance.</p>
+            <p>Brilliant Talent admission, strong academic standing, and high national entrance-exam performance.</p>
           </article>
           <article class="info-card">
             <h3>Technical Toolkit</h3>
-            <p>Verilog/VHDL, C/C++, Python, MATLAB, Vivado, Quartus, Cadence, Altium, STM32CubeMX, Linux.</p>
+            <p>Verilog/VHDL, C/C++, Python, MATLAB, Vivado, Quartus, Cadence, Altium, STM32CubeMX, and Linux.</p>
           </article>
         </div>
       </section>
@@ -947,24 +1134,33 @@
       <section class="section" id="contact">
         <div class="contact-panel">
           <div>
-            <h2>Let’s connect.</h2>
+            <h2>Contact</h2>
             <p>
-              I am interested in research opportunities, hardware-focused graduate positions, embedded systems,
-              computer architecture, FPGA/ASIC design, and interdisciplinary engineering collaborations.
+              For research collaboration, academic opportunities, and engineering projects, contact me through my
+              university email or the professional profiles listed here.
             </p>
           </div>
           <div class="contact-actions">
-            <a href="mailto:ZahraMojtahediin@gmail.com">
+            <!-- Replace YOUR_SHARIF_EMAIL@sharif.edu with Zahra's exact university email before publishing. -->
+            <a href="mailto:YOUR_SHARIF_EMAIL@sharif.edu">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3V5Zm9 7.1L5.3 7h13.4L12 12.1ZM5 17h14V8.4l-7 5.3-7-5.3V17Z"/></svg>
-              Email
+              YOUR_SHARIF_EMAIL@sharif.edu
+            </a>
+            <a href="tel:+989038308178">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 2.5 10 6l-2.2 2.7c1.2 2.4 3.1 4.3 5.5 5.5L16 12l3.5 3.4-1.7 4c-.3.7-1 1.1-1.8 1C8.9 19.5 4.5 15.1 3.6 8c-.1-.8.3-1.5 1-1.8l2-3.7Z"/></svg>
+              +98 903 830 8178
+            </a>
+            <a href="https://www.linkedin.com/in/zahramojtahedin/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 8.6H1.7V22h3.6V8.6ZM3.5 2A2.1 2.1 0 1 0 3.5 6.2 2.1 2.1 0 0 0 3.5 2ZM22.3 14.3c0-4-2.1-5.9-5-5.9-2.3 0-3.3 1.3-3.9 2.1V8.6H9.8V22h3.6v-6.6c0-1.7.3-3.4 2.5-3.4 2.2 0 2.2 2 2.2 3.5V22h3.6l.6-7.7Z"/></svg>
+              LinkedIn
             </a>
             <a href="https://orcid.org/0009-0004-0178-3286" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.2a10.8 10.8 0 1 0 0 21.6A10.8 10.8 0 0 0 12 1.2Zm-3.2 5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM7.7 10h2.1v7H7.7v-7Zm3.5 0h3.3c2.8 0 4.5 1.5 4.5 3.5 0 2.3-1.8 3.5-4.5 3.5h-3.3v-7Zm2.1 1.8v3.5h1.1c1.7 0 2.7-.5 2.7-1.8 0-1.2-1-1.7-2.7-1.7h-1.1Z"/></svg>
-              ORCID Profile
+              ORCID
             </a>
-            <a href="Zahra_Mojtahedin_Hardware_CV.pdf" target="_blank">
+            <a href="Zahra_Mojtahedin_CV.pdf" target="_blank">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6V2Zm7 1.8V7h3.2L13 3.8ZM8 11h8v1.6H8V11Zm0 3.3h8v1.6H8v-1.6Zm0 3.3h5.2v1.6H8v-1.6Z"/></svg>
-              Hardware CV
+              CV
             </a>
           </div>
         </div>
