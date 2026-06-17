@@ -906,6 +906,32 @@
       }
     }
 
+
+    /* Contact layout adjustment */
+    .contact-box {
+      grid-template-columns: minmax(0, 1.45fr) minmax(230px, 0.85fr);
+    }
+
+    .contact-box a {
+      min-width: 0;
+    }
+
+    .contact-box a:first-child {
+      white-space: nowrap;
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 760px) {
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box a:first-child {
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+    }
+
   </style>
 </head>
 
