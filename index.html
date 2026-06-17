@@ -3,10 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Zahra Mojtahedin</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .content {
+            max-width: 750px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+            font-size: 52px;
+            color: #0f172a;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: normal;
+            color: #2563eb;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 6px;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+        }
+
+        .button.secondary {
+            background: #0f172a;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Zahra Mojtahedin</h1>
-    <p>Electrical Engineering Student at Sharif University of Technology</p>
+    <section class="hero">
+        <div class="content">
+            <h1>Zahra Mojtahedin</h1>
+
+            <h2>
+                Electrical Engineering Student at Sharif University of Technology
+            </h2>
+
+            <p>
+                Interested in digital electronic systems, computer architecture,
+                embedded systems, FPGA development, and hardware design.
+            </p>
+
+            <div class="buttons">
+                <a class="button"
+                   href="https://github.com/zahramojtahedin"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <a class="button secondary"
+                   href="#about">
+                    About Me
+                </a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
