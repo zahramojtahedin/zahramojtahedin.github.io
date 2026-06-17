@@ -117,19 +117,50 @@
     }
 
     .profile-photo-wrap {
-      display: none;
+      position: relative;
+      display: block;
       width: 175px;
       height: 175px;
       margin-bottom: 24px;
+      border-radius: 50%;
+      background:
+        linear-gradient(145deg, rgba(47, 102, 144, 0.16), rgba(42, 140, 130, 0.18));
+      border: 5px solid white;
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .profile-photo {
-      width: 175px;
-      height: 175px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid white;
-      box-shadow: var(--shadow);
+      display: block;
+    }
+
+    .profile-placeholder {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .profile-placeholder svg {
+      width: 66px;
+      height: 66px;
+      fill: rgba(47, 102, 144, 0.62);
     }
 
     .sidebar h1 {
@@ -584,29 +615,38 @@
         <a href="#academic-projects" data-route="academic-projects">Academic Projects</a>
         <a href="#teaching" data-route="teaching">Teaching</a>
         <a href="#cv" data-route="cv">CV</a>
-        <a href="#contact" data-route="contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <div class="layout">
     <aside class="sidebar">
-      <!-- The image is hidden automatically until a real profile.jpg is uploaded. -->
+      <!-- Upload a real photo named profile.jpg; this reserved space remains visible until then. -->
       <div class="profile-photo-wrap" id="profile-wrap">
+        <div class="profile-placeholder" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 5.5V22h18v-2.5C21 16.5 17 14 12 14Z"/>
+          </svg>
+          <span>Profile Photo</span>
+        </div>
         <img
           class="profile-photo"
           src="profile.jpg"
           alt="Zahra Mojtahedin"
-          onload="document.getElementById('profile-wrap').style.display='block'"
-          onerror="document.getElementById('profile-wrap').style.display='none'"
+          onerror="this.style.display='none'"
         />
       </div>
 
       <h1>Zahra Mojtahedin</h1>
-      <p class="sidebar-role">M.Sc. Student in Electrical Engineering</p>
+      <p class="sidebar-role">
+        Electrical Engineering Student
+        <span style="font-weight:600; color:var(--muted);">
+          (Digital Electronic Systems)
+        </span>
+      </p>
       <p class="sidebar-bio">
-        Digital electronic systems, computer architecture, embedded systems,
-        VLSI, and intelligent hardware.
+        Interested in computer architecture, embedded systems, VLSI,
+        FPGA/ASIC design, and intelligent hardware.
       </p>
 
       <div class="sidebar-meta">
@@ -795,8 +835,25 @@
           ${pageHeader(
             "Academic Profile",
             "About Me",
-            "I am an Electrical Engineering student at Sharif University of Technology, working across digital systems, computer architecture, embedded platforms, and intelligent hardware."
+            "I am an Electrical Engineering student at Sharif University of Technology, specializing in Digital Electronic Systems. My academic work is centered on the design and analysis of efficient computing and embedded platforms."
           )}
+
+          <p>
+            My experience spans computer architecture, FPGA and ASIC design,
+            embedded systems, digital and integrated circuit design, biomedical
+            sensing, and learning-based systems. Across research projects,
+            internships, and advanced coursework, I have worked on problems that
+            connect architectural decisions, hardware constraints, signal
+            acquisition, and real-time implementation.
+          </p>
+
+          <p>
+            I am particularly interested in developing reliable and resource-aware
+            hardware solutions that translate theoretical and algorithmic ideas
+            into practical systems. This includes processor and accelerator
+            architectures, hardware–software co-design, intelligent sensing, and
+            efficient implementations of computational models.
+          </p>
 
           <h3 class="section-title">Research Interests</h3>
           <div class="accent-line"></div>
@@ -810,20 +867,18 @@
             <div class="interest">Intelligent and Biomedical Hardware</div>
           </div>
 
-          <h3 class="section-title">Current Work</h3>
-          <p>
-            My current academic work includes an M.Sc. thesis on the architecture
-            of deep ReLU networks using approximation theory, along with research
-            and engineering projects involving digital hardware, sensing systems,
-            embedded implementation, and neural data.
-          </p>
+          <h3 class="section-title">Contact</h3>
+          <div class="contact-box">
+            <a href="mailto:zahra.mojtahedin@sharif.edu">
+              ${icon("i-mail")}
+              zahra.mojtahedin@sharif.edu
+            </a>
 
-          <h3 class="section-title">Website Structure</h3>
-          <p>
-            Research projects, publications, academic projects, and teaching
-            materials are organized into separate sections. Each teaching course
-            and major research project opens as its own page within this website.
-          </p>
+            <a href="tel:+989038308178">
+              ${icon("i-phone")}
+              +98 903 830 8178
+            </a>
+          </div>
         </article>
       `;
     }
@@ -1012,30 +1067,6 @@
       `;
     }
 
-    function contactPage() {
-      return `
-        <article class="page">
-          ${pageHeader(
-            "Get in Touch",
-            "Contact",
-            "As requested, this section contains only the university email address and telephone number."
-          )}
-
-          <div class="contact-box">
-            <a href="mailto:zahra.mojtahedin@sharif.edu">
-              ${icon("i-mail")}
-              zahra.mojtahedin@sharif.edu
-            </a>
-
-            <a href="tel:+989038308178">
-              ${icon("i-phone")}
-              +98 903 830 8178
-            </a>
-          </div>
-        </article>
-      `;
-    }
-
     function notFoundPage() {
       return `
         <article class="page">
@@ -1060,7 +1091,6 @@
       else if (section === "teaching" && detail) content = teachingDetail(detail);
       else if (section === "teaching") content = teachingPage();
       else if (section === "cv") content = cvPage();
-      else if (section === "contact") content = contactPage();
       else content = notFoundPage();
 
       document.getElementById("app").innerHTML = content;
